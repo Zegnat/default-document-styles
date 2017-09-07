@@ -1,0 +1,35 @@
+{
+  "name": "default-document-styles",
+  "version": "0.0.1",
+  "description": "Some default CSS styles I like to use for one-off documents.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zegnat/default-document-styles.git"
+  },
+  "author": {
+    "name": "Martijn van der Ven",
+    "email": "martijn@vanderven.se",
+    "url": "http://vanderven.se/martijn/"
+  },
+  "license": "0BSD",
+  "dependencies": {
+    "colors.css": "^3.0.0",
+    "cssnano": "^4.0.0-rc.2",
+    "postcss-cli": "^4.1.0",
+    "postcss-custom-properties": "^6.1.0",
+    "postcss-import": "^10.0.0",
+    "sanitize.css": "^5.0.0",
+    "system-font-css": "^2.0.1"
+  },
+  "scripts": {
+    "build": "postcss -o default-document-styles.min.css default-document-styles.css"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "postcss-import": {},
+      "postcss-custom-properties": {},
+      "cssnano": {}
+    }
+  }
+}

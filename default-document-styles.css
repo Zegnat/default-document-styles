@@ -1,0 +1,26 @@
+@import 'node_modules/colors.css/src/_variables.css';
+@import 'node_modules/system-font-css/system-font.css';
+@import 'node_modules/sanitize.css/sanitize.css';
+
+/*! default-document-styles.css v0.0.1 | 0BSD License */
+
+/* Link styles */
+:link, :visited { color: var(--blue); }
+:link:hover, :link:focus, :visited:hover, :visited:focus { color: var(--navy); }
+:link:active, :visited:active { color: var(--red); }
+
+/* Set outline to “auto”. This is the only browser-default approximation known to us.
+   See https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+:focus { outline: auto; }
+
+html {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: system-ui;
+    line-height: 1.4;
+}
+
+mark {
+    background-color: var(--yellow);
+    color: var(--black);
+}
