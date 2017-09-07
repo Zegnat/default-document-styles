@@ -1,6 +1,6 @@
 {
   "name": "default-document-styles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Some default CSS styles I like to use for one-off documents.",
   "repository": {
     "type": "git",

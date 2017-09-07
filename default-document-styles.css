@@ -2,7 +2,7 @@
 @import 'node_modules/system-font-css/system-font.css';
 @import 'node_modules/sanitize.css/sanitize.css';
 
-/*! default-document-styles.css v0.0.1 | 0BSD License */
+/*! default-document-styles.css v0.0.2 | 0BSD License */
 
 /* Link styles */
 :link, :visited { color: var(--blue); }
@@ -13,6 +13,7 @@
    See https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
 :focus { outline: auto; }
 
+/* Basic elements */
 html {
     background-color: var(--white);
     color: var(--black);
@@ -23,4 +24,41 @@ html {
 mark {
     background-color: var(--yellow);
     color: var(--black);
+}
+
+/* Accessible footnotes
+   See https://www.sitepoint.com/accessible-footnotes-css/ */
+body {
+    counter-reset: footnotes;
+}
+[aria-describedby="footnote-label"], [aria-describedby="footnote-label"]:active {
+    counter-increment: footnotes;
+    text-decoration: none;
+    color: inherit;
+    cursor: inherit;
+    outline: none;
+}
+[aria-describedby="footnote-label"]::after {
+    content: '[' counter(footnotes) ']';
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+    top: -.5em;
+    left: 2px;
+}
+[aria-describedby="footnote-label"]:hover::after, [aria-describedby="footnote-label"]:focus::after {
+    color: var(--navy);
+}
+[aria-describedby="footnote-label"]:focus::after {
+    outline: auto;
+}
+[aria-describedby="footnote-label"]:active::after {
+    color: var(--red);
+}
+li:target {
+    background: var(--yellow);
 }
