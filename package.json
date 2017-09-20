@@ -17,6 +17,7 @@
     "cssnano": "^4.0.0-rc.2",
     "postcss-cli": "^4.1.0",
     "postcss-custom-properties": "^6.1.0",
+    "postcss-extend-rule": "^1.1.0",
     "postcss-import": "^10.0.0",
     "postcss-nesting": "^4.2.1",
     "postcss-pseudo-class-any-link": "^4.0.0",
@@ -32,6 +33,7 @@
     "plugins": {
       "postcss-import": {},
       "postcss-nesting": {},
+      "postcss-extend-rule": {},
       "postcss-pseudo-class-any-link": {},
       "postcss-pseudo-class-enter": {},
       "postcss-custom-properties": {},

@@ -14,12 +14,15 @@
 :focus { outline: auto; }
 
 /* Remove all link styling from a link. */
+%nolink {
+    text-decoration: none;
+    color: inherit;
+    cursor: inherit;
+    outline: none;
+}
 .nolink[tabindex="-1"] {
     @nest &:any-link, &:any-link:enter, &:any-link:active {
-        text-decoration: none;
-        color: inherit;
-        cursor: inherit;
-        outline: none;
+        @extend %nolink;
     }
 }
 
@@ -41,33 +44,35 @@ mark {
 body {
     counter-reset: footnotes;
 }
-[aria-describedby="footnote-label"], [aria-describedby="footnote-label"]:active {
+[aria-describedby="footnote-label"] {
     counter-increment: footnotes;
-    text-decoration: none;
-    color: inherit;
-    cursor: inherit;
-    outline: none;
-}
-[aria-describedby="footnote-label"]::after {
-    content: '[' counter(footnotes) ']';
-    color: var(--blue);
-    text-decoration: underline;
-    cursor: pointer;
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-    top: -.5em;
-    left: 2px;
-}
-[aria-describedby="footnote-label"]:enter::after {
-    color: var(--navy);
-}
-[aria-describedby="footnote-label"]:focus::after {
-    outline: auto;
-}
-[aria-describedby="footnote-label"]:active::after {
-    color: var(--red);
+
+    @nest &, &:enter, &:active {
+        @extend %nolink;
+    }
+
+    @nest &::after {
+        content: '[' counter(footnotes) ']';
+        color: var(--blue);
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+        top: -.5em;
+        left: 2px;
+    }
+
+    @nest &:enter::after {
+        color: var(--navy);
+    }
+    @nest &:active::after {
+        color: var(--red);
+    }
+    @nest &:focus::after {
+        outline: auto;
+    }
 }
 li:target {
     background: var(--yellow);
