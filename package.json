@@ -18,6 +18,9 @@
     "postcss-cli": "^4.1.0",
     "postcss-custom-properties": "^6.1.0",
     "postcss-import": "^10.0.0",
+    "postcss-nesting": "^4.2.1",
+    "postcss-pseudo-class-any-link": "^4.0.0",
+    "postcss-pseudo-class-enter": "^3.0.1",
     "sanitize.css": "^5.0.0",
     "system-font-css": "^2.0.1"
   },
@@ -28,6 +31,9 @@
     "map": false,
     "plugins": {
       "postcss-import": {},
+      "postcss-nesting": {},
+      "postcss-pseudo-class-any-link": {},
+      "postcss-pseudo-class-enter": {},
       "postcss-custom-properties": {},
       "cssnano": {}
     }
