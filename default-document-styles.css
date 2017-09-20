@@ -2,7 +2,7 @@
 @import 'node_modules/system-font-css/system-font.css';
 @import 'node_modules/sanitize.css/sanitize.css';
 
-/*! default-document-styles.css v0.0.2 | 0BSD License */
+/*! default-document-styles.css v0.0.3 | 0BSD License */
 
 /* Link styles */
 :any-link { color: var(--blue); }
